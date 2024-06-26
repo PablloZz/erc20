@@ -56,7 +56,7 @@ contract TokenErc20 {
    * @param _to The address of the recipient
    * @param _value The amount to send
    */
-  function _transfer(address _to, uint256 value) public returns (bool success) {
+  function _transfer(address _to, uint256 _value) public returns (bool success) {
     _transfer(msg.sender, _to, _value);
     return true;
   }
@@ -70,7 +70,7 @@ contract TokenErc20 {
    * @param _to The address of the recipient
    * @param _value The amount to send
    */
-  function transferFrom(address _from, address _to, _value) public returns (bool success) {
+  function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
     require(_value <= allowance[_from][msg.sender]); // Check allowance
     allowance[_from][msg.sender] -= _value;
     _transfer(_from, _to, _value);
@@ -122,7 +122,7 @@ contract TokenErc20 {
   function burn(uint256 _value) public returns (bool success) {
     require(balanceOf[msg.sender] >= _value);
     balanceOf[msg.sender] -= _value;
-    totalSupply -= value;
+    totalSupply -= _value;
     emit Burn(msg.sender, _value);
     return true;
   }
@@ -136,10 +136,10 @@ contract TokenErc20 {
    * @param _value The amount of money to burn
    */
   function burnFrom(address _from, uint256 _value) public returns (bool success) {
-    require(balanceOf[_from] >= value);
+    require(balanceOf[_from] >= _value);
     require(_value <= allowance[_from][msg.sender]);
     balanceOf[_from] -= _value;
-    allowance[from][msg.sender] -= _value;
+    allowance[_from][msg.sender] -= _value;
     totalSupply -= _value;
     emit Burn(_from, _value);
     return true;

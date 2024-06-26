@@ -1,7 +1,4 @@
-import "@typechain/hardhat";
-import "@nomicfoundation/hardhat-ethers";
 import "@nomicfoundation/hardhat-toolbox";
-import "hardhat-contract-sizer";
 import { type HardhatUserConfig } from "hardhat/types";
 import { vars } from "hardhat/config";
 
@@ -14,10 +11,10 @@ const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {
-      chainId: 1337,
+      chainId: 31337,
     },
     localhost: {
-      chainId: 1337,
+      chainId: 31337,
     },
     sepolia: {
       chainId: 11155111,
