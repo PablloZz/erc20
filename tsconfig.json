@@ -15,6 +15,6 @@
     "baseUrl": "."
   },
   "exclude": ["node_modules"],
-  "include": ["./scripts/*", "./test", "./typechain-types", "./utils"],
+  "include": ["./scripts", "./test", "./typechain-types", "./utils"],
   "files": ["hardhat.config.ts"]
 }

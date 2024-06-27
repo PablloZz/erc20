@@ -1,3 +1,5 @@
+import { ethers } from "ethers";
+
 type NetworkConfigItem = {
   blockConfirmations: number;
 };
@@ -18,4 +20,7 @@ const networkConfig: NetworkConfigInfo = {
   },
 };
 
-export { networkConfig };
+const developmentChains = ["hardhat", "localhost"];
+const INITIAL_SUPPLY = ethers.parseEther("100").toString();
+
+export { networkConfig, developmentChains, INITIAL_SUPPLY };

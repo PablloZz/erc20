@@ -1,8 +1,6 @@
 import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
 import { type IgnitionModuleResult } from "@nomicfoundation/ignition-core";
-import { ethers } from "hardhat";
-
-const INITIAL_SUPPLY = ethers.parseEther("100").toString();
+import { INITIAL_SUPPLY } from "../../helper-hardhat-config";
 
 export default buildModule<"OurToken", "OurToken", IgnitionModuleResult<"OurToken">>(
   "OurToken",
