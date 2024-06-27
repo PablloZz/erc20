@@ -21,6 +21,6 @@ const networkConfig: NetworkConfigInfo = {
 };
 
 const developmentChains = ["hardhat", "localhost"];
-const INITIAL_SUPPLY = ethers.parseEther("100").toString();
+const INITIAL_SUPPLY = String(ethers.parseEther("100"));
 
 export { networkConfig, developmentChains, INITIAL_SUPPLY };

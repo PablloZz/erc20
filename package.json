@@ -1,7 +1,8 @@
 {
   "license": "MIT",
   "scripts": {
-    "deploy": "yarn hardhat run scripts/deployment/main.ts"
+    "deploy": "yarn hardhat run scripts/deployment/main.ts",
+    "deploy:local": "yarn deploy --network localhost"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.7",
